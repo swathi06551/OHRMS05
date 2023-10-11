@@ -1,0 +1,22 @@
+package com.inheritanceExample;
+
+public class Inheritance1Example extends InheritanceExample {
+
+	public void multiplication()
+	{
+		double var1=23;
+		int var2=56;
+		double var3;
+		var3=var1*var2;
+		
+		System.out.println("the multiplication of var1 and var2 is "+var3);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Inheritance1Example ie2= new Inheritance1Example();
+		ie2.multiplication();
+		InheritanceExample ie1 = new	InheritanceExample();
+		ie1.addition();
+	}
+
+}

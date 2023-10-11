@@ -1,0 +1,10 @@
+package com.inheritanceExample;
+
+public class Inheritance3Example {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

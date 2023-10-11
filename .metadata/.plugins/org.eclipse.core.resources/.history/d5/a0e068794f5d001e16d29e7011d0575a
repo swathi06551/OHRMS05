@@ -1,0 +1,52 @@
+package com.webTableExample;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class WebTableData extends BaseTest{
+	public void CapturingWebTableData() throws IOException
+	{
+	/*	FileInputStream cityNameFile = new FileInputStream("C:\\Users\\swathi\\Desktop\\SeleniumPractice\\WebTableData.xlsx");
+		XSSFWorkbook workBook = new XSSFWorkbook(cityNameFile);
+		XSSFSheet cityNameSheet = workBook.getSheet("TestData"); */
+		
+		String xpathexpression1Cell = "/html/body/div[5]/section[1]/div/section/div[1]/div/table/tbody/tr[";
+				String xpathexpression2Cell = "]/td[";
+				String xpathexpression3Cell	= "]";
+		///html/body/div[5]/section[1]/div/section/div[1]/div/table/tbody/tr[36]/td[1]
+		for(int rowIndex=1;rowIndex<=36;rowIndex++)
+		{
+			for(int rowofCellIndex = 1;rowofCellIndex<=8;rowofCellIndex++)
+			{
+				
+			By cityNameProperty = By.xpath(xpathexpression1Cell+rowIndex+xpathexpression2Cell+rowofCellIndex+xpathexpression3Cell);
+			WebElement cityName = driver.findElement(cityNameProperty);
+			String cityNameText = cityName.getText();
+			System.out.print(cityNameText + " |");
+			//Row CityNameRow = cityNameSheet.createRow(rowIndex);
+		/*	Row newRow = cityNameSheet.createRow(rowIndex);
+			Cell newRowOfCell=newRow.createCell(0);
+			newRowOfCell.setCellValue(cityNameText); */
+		}
+			System.out.println();
+			}
+		/*FileOutputStream WebTableDataResult = new FileOutputStream("C:\\Users\\swathi\\Desktop\\SeleniumPractice\\WebTableData.xlsx");
+		workBook.write(WebTableDataResult); */
+	}
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		WebTableData TotalWebTable = new WebTableData();
+		TotalWebTable.applicationLaunch();
+		TotalWebTable.CapturingWebTableData();
+      
+	}
+
+}

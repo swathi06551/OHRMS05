@@ -1,0 +1,23 @@
+package com.inheritanceExample;
+
+public class Inheritance3Example extends Inheritance1Example {
+	
+	public void division()
+	{
+		int var1=20;
+		int var2=10;
+		int var3;
+		var3 = var1%var2;
+		System.out.println("the division of var1 and var2 is "+var3);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Inheritance3Example ie3 = new Inheritance3Example();
+		ie3.division();
+        ie3.multiplication();
+        ie3.addition();
+	}
+
+}
